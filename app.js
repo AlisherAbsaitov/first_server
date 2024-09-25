@@ -12,7 +12,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-console.log(__dirname);
+
 
 app.get("/", (req, res) => {
   res.send("Welcome to server");
@@ -28,7 +28,7 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:3000/",
+        url: "https://first-server-jmlo.onrender.com",
       },
     ],
   },
