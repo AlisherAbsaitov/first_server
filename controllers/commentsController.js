@@ -26,10 +26,10 @@ export const createNewComment = async (req, res) => {
 
 export const getComment = async (req, res) => {
   try {
-    const comments = await Comments.findById(req.params.id);
-    res.status.json({
+    const comment = await Comments.findById(req.params.id);
+    res.status(200).json({
       status: "success",
-      data: comments,
+      data: comment,
     });
   } catch (error) {
     return res.status(404).json({ status: "fail", message: error });
@@ -42,8 +42,8 @@ export const updateComment = async (req, res) => {
       req.body.id,
       req.body,
       {
-        runValidators: true,
         new: true,
+        runValidators: true,
       }
     );
     res.status(200).json({

@@ -88,6 +88,8 @@ export const getProduct = async (req, res, next) => {
         message: "Product nomi topilmadi",
       });
     }
+    console.log(product);
+    
     res.status(200).json({
       status: "success",
       data: product,

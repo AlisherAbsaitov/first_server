@@ -12,4 +12,5 @@ const commentsSchema = new mongoose.Schema({
   },
 });
 
-export const Comments = mongoose.model("Comments",commentsSchema);
+
+export const Comments = mongoose.model("comments",commentsSchema);
