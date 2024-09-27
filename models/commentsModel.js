@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-import { Products } from "./produtsModel";
+import { Products } from "./produtsModel.js";
 
 const commentsSchema = new mongoose.Schema({
   message: {
