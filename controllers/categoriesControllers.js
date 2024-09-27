@@ -29,6 +29,9 @@ export const getAllCategories = async (req, res, next) => {
 export const createCategory = async (req, res, next) => {
   try {
     const categories = await Categories.create(req.body);
+    if(req.file){
+      categories.image = req.file
+    }
     res.status(201).json({
       status: "success",
       results: categories.length,
@@ -67,14 +70,17 @@ export const deleteCategory = async (req, res) => {
 
 export const updateCategory = async (req, res, next) => {
   try {
-    const updatedCategory = await Categories.findByIdAndUpdate(
+    const category = await Categories.findByIdAndUpdate(
       req.params.id,
       req.body,
       { new: true, runValidators: true }
     );
+    if(req.file){
+      category.image = req.file
+    }
     res.status(200).json({
       status: "success",
-      data: updatedCategory,
+      data: category,
     });
   } catch (err) {
     res.status(400).json({

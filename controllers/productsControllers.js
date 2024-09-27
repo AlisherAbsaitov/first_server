@@ -27,6 +27,10 @@ export const getAllProducts = async (req, res) => {
 export const createProduct = async (req, res, next) => {
   try {
     const products = await Products.create(req.body);
+    if(req.file){
+      products.image = req.file
+    }
+
     res.status(201).json({
       status: "success",
       results: products.length,
@@ -47,6 +51,9 @@ export const updateProduct = async (req, res, next) => {
       req.body,
       { new: true, runValidators: true }
     );
+    if(req.file){
+      updatedProduct.image = req.file
+    }
     res.status(200).json({
       status: "success",
       data: updatedProduct,

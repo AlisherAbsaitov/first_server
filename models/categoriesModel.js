@@ -9,6 +9,9 @@ const categoriesSchema = new mongoose.Schema({
   description: {
     type: String,
   },
+  image:{
+    type: String,
+  }
 });
 
 export const Categories = mongoose.model("categories", categoriesSchema);

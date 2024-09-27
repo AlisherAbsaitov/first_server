@@ -1,351 +1,395 @@
 {
-  "openapi": "3.0.1",
+  "swagger": "2.0",
   "info": {
     "title": "My Api",
     "description": "Description",
     "version": "1.0.0"
   },
-  "servers": [
-    {
-      "url": "http://localhost:3000/"
-    }
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
   ],
   "paths": {
     "/": {
       "get": {
+        "description": "",
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {}
+            "description": "OK"
           }
         }
       }
     },
     "/categories/": {
       "get": {
+        "description": "",
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {}
+            "description": "OK"
           },
           "404": {
-            "description": "Not Found",
-            "content": {}
+            "description": "Not Found"
           }
         }
       },
       "post": {
+        "description": "",
         "parameters": [
           {
             "name": "authorization",
             "in": "header",
-            "schema": {
-              "type": "string"
-            }
+            "type": "string"
           }
         ],
         "responses": {
           "201": {
-            "description": "Created",
-            "content": {}
+            "description": "Created"
           },
           "400": {
-            "description": "Bad Request",
-            "content": {}
+            "description": "Bad Request"
           }
         }
       }
     },
     "/categories/{id}": {
       "get": {
+        "description": "",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "type": "string"
           }
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {}
+            "description": "OK"
           },
           "404": {
-            "description": "Not Found",
-            "content": {}
+            "description": "Not Found"
           },
           "500": {
-            "description": "Internal Server Error",
-            "content": {}
+            "description": "Internal Server Error"
           }
         }
       },
       "delete": {
+        "description": "",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "type": "string"
           },
           {
             "name": "authorization",
             "in": "header",
-            "schema": {
-              "type": "string"
-            }
+            "type": "string"
           }
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {}
+            "description": "OK"
           },
           "400": {
-            "description": "Bad Request",
-            "content": {}
+            "description": "Bad Request"
           },
           "404": {
-            "description": "Not Found",
-            "content": {}
+            "description": "Not Found"
           }
         }
       },
       "patch": {
+        "description": "",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "type": "string"
           },
           {
             "name": "authorization",
             "in": "header",
-            "schema": {
-              "type": "string"
-            }
+            "type": "string"
           }
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {}
+            "description": "OK"
           },
           "400": {
-            "description": "Bad Request",
-            "content": {}
+            "description": "Bad Request"
           }
         }
       }
     },
     "/products/": {
       "get": {
+        "description": "",
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {}
+            "description": "OK"
           },
           "404": {
-            "description": "Not Found",
-            "content": {}
+            "description": "Not Found"
           }
         }
       },
       "post": {
+        "description": "",
         "parameters": [
           {
             "name": "authorization",
             "in": "header",
-            "schema": {
-              "type": "string"
-            }
+            "type": "string"
           }
         ],
         "responses": {
           "201": {
-            "description": "Created",
-            "content": {}
+            "description": "Created"
           },
           "400": {
-            "description": "Bad Request",
-            "content": {}
+            "description": "Bad Request"
           }
         }
       }
     },
     "/products/{id}": {
       "get": {
+        "description": "",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "type": "string"
           }
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {}
+            "description": "OK"
           },
           "404": {
-            "description": "Not Found",
-            "content": {}
+            "description": "Not Found"
           },
           "500": {
-            "description": "Internal Server Error",
-            "content": {}
+            "description": "Internal Server Error"
           }
         }
       },
       "put": {
+        "description": "",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "type": "string"
           },
           {
             "name": "authorization",
             "in": "header",
-            "schema": {
-              "type": "string"
-            }
+            "type": "string"
           }
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {}
+            "description": "OK"
           },
           "400": {
-            "description": "Bad Request",
-            "content": {}
+            "description": "Bad Request"
           }
         }
       },
       "delete": {
+        "description": "",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "type": "string"
           },
           {
             "name": "authorization",
             "in": "header",
-            "schema": {
-              "type": "string"
-            }
+            "type": "string"
           }
         ],
         "responses": {
           "204": {
-            "description": "No Content",
-            "content": {}
+            "description": "No Content"
           },
           "400": {
-            "description": "Bad Request",
-            "content": {}
+            "description": "Bad Request"
           },
           "404": {
-            "description": "Not Found",
-            "content": {}
+            "description": "Not Found"
           }
         }
       }
     },
     "/users/login": {
       "post": {
-        "requestBody": {
-          "content": {
-            "*/*": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "username": {
-                    "type": "object",
-                    "example": "any"
-                  },
-                  "password": {
-                    "type": "object",
-                    "example": "any"
-                  }
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
                 }
               }
             }
-          },
-          "required": false
-        },
+          }
+        ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {}
+            "description": "OK"
           },
           "400": {
-            "description": "Bad Request",
-            "content": {}
+            "description": "Bad Request"
           },
           "404": {
-            "description": "Not Found",
-            "content": {}
+            "description": "Not Found"
           }
-        },
-        "x-codegen-request-body-name": "body"
+        }
       }
     },
     "/users/signup": {
       "post": {
-        "requestBody": {
-          "content": {
-            "*/*": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "username": {
-                    "type": "object",
-                    "example": "any"
-                  },
-                  "password": {
-                    "type": "object",
-                    "example": "any"
-                  }
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
                 }
               }
             }
-          },
-          "required": false
-        },
+          }
+        ],
         "responses": {
           "201": {
-            "description": "Created",
-            "content": {}
+            "description": "Created"
           },
           "400": {
-            "description": "Bad Request",
-            "content": {}
+            "description": "Bad Request"
           }
-        },
-        "x-codegen-request-body-name": "body"
+        }
+      }
+    },
+    "/comments/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/comments/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "patch": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
       }
     }
-  },
-  "components": {},
-  "x-original-swagger-version": "2.0"
+  }
 }

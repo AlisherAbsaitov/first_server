@@ -28,6 +28,9 @@ const productsSchema = new mongoose.Schema({
   category: {
     type: String,
   },
+  image:{
+    type:String
+  }
 });
 
 productsSchema.pre("save", async function (next) {
