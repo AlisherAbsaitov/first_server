@@ -24,34 +24,42 @@ export const createNewComment = async (req, res) => {
   }
 };
 
-export const getComment = async (req, res) => {
+
+export const getComment = async (req, res, next) => {
   try {
     const comment = await Comments.findById(req.params.id);
     res.status(200).json({
       status: "success",
       data: comment,
     });
-  } catch (error) {
-    return res.status(404).json({ status: "fail", message: error });
+  } catch (err) {
+    res.status(500).json({
+      status: "fail",
+      message: "Server Error",
+    });
   }
 };
 
-export const updateComment = async (req, res) => {
+
+export const updateComment = async (req, res, next) => {
   try {
     const updateComment = await Comments.findByIdAndUpdate(
-      req.body.id,
+      req.params.id,
       req.body,
-      {
-        new: true,
-        runValidators: true,
-      }
+      { new: true, runValidators: true }
     );
+    if(req.file){
+      updateComment.image = req.file
+    }
     res.status(200).json({
       status: "success",
       data: updateComment,
     });
-  } catch (error) {
-    return res.status(400).json({ status: "fail", message: error });
+  } catch (err) {
+    res.status(400).json({
+      status: "fail",
+      message: err,
+    });
   }
 };
 
