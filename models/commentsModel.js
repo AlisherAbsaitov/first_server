@@ -1,11 +1,11 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 const commentsSchema = new mongoose.Schema({
   message: {
     typeof: "string",
   },
   productId: {
-    type: mongoose.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     required: true,
     ref: "products",
   },
