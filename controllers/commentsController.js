@@ -12,15 +12,22 @@ export const gettAllComments = async (req, res) => {
     return res.status(500).json({ status: "fail", message: error });
   }
 };
-export const createNewComment = async (req, res) => {
+
+
+export const createNewComment = async (req, res, next) => {
   try {
-    const newComment = await Comments.create(req.body);
+    const comment = await Comments.create(req.body);  
+    console.log(comment);
+      
     res.status(201).json({
       status: "success",
-      data: newComment,
+      data: comment,
     });
-  } catch (error) {
-    return res.status(400).json({ status: "fail", message: error });
+  } catch (err) {
+    res.status(400).json({
+      status: "fail",
+      message: err,
+    });
   }
 };
 

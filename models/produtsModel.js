@@ -35,15 +35,13 @@ const productsSchema = new mongoose.Schema({
 
 productsSchema.pre("save", async function (next) {
   if (this.isModified("categoryId")) {
-    // Fetch the category document using the id
     const category = await Categories.findById(this.categoryId);
     if (!category) {
       return next(new Error("Categoriya topilmadi"));
     }
-    // Set the category name
     this.category = category.name;
   }
-  console.log(this);
+
   next();
 });
 

@@ -27,9 +27,12 @@ export const getAllProducts = async (req, res) => {
 export const createProduct = async (req, res, next) => {
   try {
     const products = await Products.create(req.body);
+    console.log(products);
+    
     if(req.file){
       products.image = req.file
     }
+    
 
     res.status(201).json({
       status: "success",
@@ -89,7 +92,6 @@ export const getProduct = async (req, res, next) => {
       });
     }
     console.log(product);
-    
     res.status(200).json({
       status: "success",
       data: product,
