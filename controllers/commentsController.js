@@ -58,6 +58,8 @@ export const updateComment = async (req, res, next) => {
     if(req.file){
       updateComment.image = req.file
     }
+    console.log(updateComment);
+    
     res.status(200).json({
       status: "success",
       data: updateComment,
