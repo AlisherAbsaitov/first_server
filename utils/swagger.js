@@ -4,7 +4,7 @@ const doc = {
     title: "My Api",
     description: "Description",
   },
-  host: "localhost:3000",
+  host: "https://first-server-jmlo.onrender.com",
 };
 
 const output = "./swagger-autogen.json";
